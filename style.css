@@ -983,3 +983,20 @@ object {
 .gallery-caption {
 	display: block;
 }
+
+/*--------------------------------------------------------------
+# Custom Theme Style
+--------------------------------------------------------------*/
+
+.site-title, .site-description {
+	position: absolute;
+	left: -999999px;
+}
+
+/*--------------------------------------------------------------
+## Siteorigin Compatibility
+--------------------------------------------------------------*/
+.panel-grid.panel-no-style {
+    max-width: 1170px;
+    margin: 0 auto;
+}
