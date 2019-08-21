@@ -54,6 +54,16 @@
 			) );
 			?>
 		</nav><!-- #site-navigation -->
+		<nav id="secondary-navigation" class="main-navigation secondary-navigation">
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'ecologix' ); ?></button>
+			<?php
+			wp_nav_menu( array(
+				'theme_location' => 'menu-2',
+				'menu_id'        => 'secondary-menu',
+			) );
+			?>
+		</nav><!-- #site-navigation -->
+
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
