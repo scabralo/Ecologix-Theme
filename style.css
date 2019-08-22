@@ -992,6 +992,9 @@ object {
 	position: absolute;
 	left: -999999px;
 }
+.main-navigation:not(.secondary-navigation) {
+	background-color: #006bb7;
+}
 
 /*--------------------------------------------------------------
 ## Siteorigin Compatibility
