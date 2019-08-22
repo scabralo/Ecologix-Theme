@@ -995,11 +995,47 @@ object {
 .main-navigation:not(.secondary-navigation) {
 	background-color: #006bb7;
 }
-
-/*--------------------------------------------------------------
-## Siteorigin Compatibility
---------------------------------------------------------------*/
-.panel-grid.panel-no-style {
+.panel-grid.panel-no-style,
+.menu-main-menu-container,
+.eco-wrapper,
+.entry-title {
     max-width: 1170px;
     margin: 0 auto;
+}
+.site-header .eco-wrapper {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+}
+main-navigation:not(.secondary-navigation) ul {
+	display: flex;
+	flex-direction: row;
+	align-items: stretch;
+}
+.main-navigation:not(.secondary-navigation) li {
+	min-height: 6em;
+	width: 14em;
+	display: flex;
+	align-items: stretch;
+	justify-content: center;
+}
+.main-navigation:not(.secondary-navigation) li:hover,
+.main-navigation:not(.secondary-navigation) li.current-menu-item {
+	background-color: #0196ff;
+}
+.main-navigation:not(.secondary-navigation) li.current-menu-item {
+	background-image: url('/ecologix/wp-content/uploads/2019/08/triangle-white.png');
+	background-position: bottom center;
+	background-repeat: no-repeat;
+}
+.main-navigation:not(.secondary-navigation) a {
+	color: white;
+	padding: 1.5em;
+	font-size: 1em;
+	text-transform: uppercase;
+}
+.site-branding img {
+	margin: 1.5em 1.5em 2em;
+	max-width: unset;
+	display: block;
 }
