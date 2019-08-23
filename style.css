@@ -990,6 +990,9 @@ object {
 body.home .entry-header {
 	display: none;
 }
+body.page {
+	margin-bottom: 0;
+}
 .site-title, .site-description {
 	position: absolute;
 	left: -999999px;
