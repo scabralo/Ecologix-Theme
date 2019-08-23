@@ -987,7 +987,9 @@ object {
 /*--------------------------------------------------------------
 # Custom Theme Style
 --------------------------------------------------------------*/
-
+body.home .entry-header {
+	display: none;
+}
 .site-title, .site-description {
 	position: absolute;
 	left: -999999px;
