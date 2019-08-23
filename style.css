@@ -996,10 +996,9 @@ object {
 	background-color: #006bb7;
 }
 .panel-grid.panel-no-style,
-.menu-main-menu-container,
 .eco-wrapper,
 .entry-title {
-    max-width: 1170px;
+    max-width: 1400px;
     margin: 0 auto;
 }
 .site-header .eco-wrapper {
@@ -1034,6 +1033,9 @@ main-navigation:not(.secondary-navigation) ul {
 	font-size: 1em;
 	text-transform: uppercase;
 }
+.main-navigation .eco-wrapper {
+	justify-content: space-between;
+}
 .site-branding img {
 	margin: 1.5em 1.5em 2em;
 	max-width: unset;
@@ -1044,6 +1046,9 @@ main-navigation:not(.secondary-navigation) ul {
 	align-items: center;
 	justify-content: center;
 }
+.secondary-navigation li {
+	padding-left: 2.5em;
+}
 .secondary-navigation a {
 	color: #9b9b9b;
 	text-transform: uppercase;
@@ -1052,5 +1057,23 @@ main-navigation:not(.secondary-navigation) ul {
 .secondary-navigation ul {
 	width: 100%;
 	display: flex;
-	justify-content: space-evenly;
+	justify-content: flex-start;
+}
+.main-navigation .eco-header-info a {
+	padding: 0;
+}
+.eco-header-info {
+	color: white;
+	display: flex;
+	align-items: center;
+}
+.eco-header-info > div {
+	display: flex;
+	align-items: center;
+}
+.eco-header-info > div:not(:first-of-type) {
+	padding-left: 3em;
+}
+.eco-header-info img {
+	padding-right: 1em;
 }

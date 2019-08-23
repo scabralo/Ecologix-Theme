@@ -26,13 +26,24 @@
 
 	<header id="masthead" class="site-header">
 		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'ecologix' ); ?></button>
-			<?php
-			wp_nav_menu( array(
-				'theme_location' => 'menu-1',
-				'menu_id'        => 'primary-menu',
-			) );
-			?>
+			<div class="eco-wrapper">
+				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'ecologix' ); ?></button>
+				<?php
+					wp_nav_menu( array(
+						'theme_location' => 'menu-1',
+						'menu_id'        => 'primary-menu',
+					) );
+				?>
+				<div class='eco-header-info'>
+					<div>
+						<img src="/ecologix/wp-content/uploads/2019/08/phone-icon.png" alt="smartphone icon" /> <span>(515) 250-6677</span>
+					</div>
+					<div>
+						<img src="/ecologix/wp-content/uploads/2019/08/binder-logo.png" alt="binder icon" /> 
+						<a href="#">Free Energy Assesment</a>
+					</div>
+				</div>
+			</div>
 		</nav><!-- #site-navigation -->
 		<div class="eco-wrapper">
 			<div class="site-branding">
@@ -57,10 +68,10 @@
 			<nav id="secondary-navigation" class="main-navigation secondary-navigation">
 				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'ecologix' ); ?></button>
 				<?php
-				wp_nav_menu( array(
-					'theme_location' => 'menu-2',
-					'menu_id'        => 'secondary-menu',
-				) );
+					wp_nav_menu( array(
+						'theme_location' => 'menu-2',
+						'menu_id'        => 'secondary-menu',
+					) );
 				?>
 			</nav><!-- #site-navigation -->
 		</div>
