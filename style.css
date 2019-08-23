@@ -1039,3 +1039,18 @@ main-navigation:not(.secondary-navigation) ul {
 	max-width: unset;
 	display: block;
 }
+.secondary-navigation {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.secondary-navigation a {
+	color: #9b9b9b;
+	text-transform: uppercase;
+}
+.secondary-navigation > div,
+.secondary-navigation ul {
+	width: 100%;
+	display: flex;
+	justify-content: space-evenly;
+}
