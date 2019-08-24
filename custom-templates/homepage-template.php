@@ -17,6 +17,7 @@ get_header();
 						echo do_shortcode( '[main-hero]' );
 						echo do_shortcode( '[after-hero]' );
 						echo do_shortcode( '[content-sections]' );
+						echo do_shortcode( '[bottom-content-sections]' );
 					?>
 				</div>
 			</article>
