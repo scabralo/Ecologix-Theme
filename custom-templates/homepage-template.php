@@ -13,7 +13,11 @@ get_header();
 		<main id="main" class="site-main">
 			<article class="page type-page status-publish hentry">
 				<div class="entry-content">
-					<?php echo do_shortcode( '[main-hero]' ); ?>
+					<?php
+						echo do_shortcode( '[main-hero]' );
+						echo do_shortcode( '[after-hero]' );
+						echo do_shortcode( '[content-sections]' );
+					?>
 				</div>
 			</article>
 		</main><!-- #main -->
