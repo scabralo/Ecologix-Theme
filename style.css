@@ -469,7 +469,7 @@ html {
 }
 
 body {
-	background: #fff;
+	background: #f3f3f3;
 	/* Fallback for when there is no custom background color defined. */
 }
 
@@ -1139,6 +1139,7 @@ footer#colophon {
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
+	margin-bottom: 2em;
 }
 .main-hero-content {
 	width: 50%;
@@ -1161,4 +1162,63 @@ footer#colophon {
 	margin: 0;
 	font-size: 2em;
 	line-height: initial;
+}
+.after-hero-content h2 {
+	margin: 0;
+	margin-bottom: .5em;
+	font-size: 2em;
+}
+.after-hero-content p {
+	font-size: 1.7em;
+	margin: 0;
+	margin-bottom: 1em;
+	color: #9b9b9b;
+}
+.after-hero-container.eco-wrapper {
+	padding: 2em 1em;
+}
+.content-section-container {
+	display: flex;
+	padding: 2em 2em;
+	align-items: flex-end;
+	justify-content: center;
+}
+.right-layout .content-section-container {
+	flex-direction: row-reverse;
+	padding-right: 5em;
+}
+.content-section-container > div {
+	max-width: 600px;
+	margin: 0 1em;
+}
+.content-section-content {
+	background: white;
+	padding: 4em;
+}
+.content-section-content h3 {
+	text-transform: uppercase;
+	color: #9b9b9b;
+	font-weight: 100;
+	font-size: 1.7em;
+	margin-top: 0;
+	margin-bottom: .25em;
+}
+.content-section-content h2 {
+	margin: 0;
+	margin-bottom: .25em;
+	font-size: 3em;
+}
+.content-section-content a {
+	text-decoration: none;
+	color: #0196ff;
+}
+.content-section-content a.eco-button {
+	color: white;
+	background: #0196ff;
+	padding: 1em;
+	text-transform: uppercase;
+	font-weight: 600;
+}
+.left-layout .content-section-container {
+	padding-left: 5em;
 }
