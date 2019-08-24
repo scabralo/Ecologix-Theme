@@ -27,7 +27,6 @@
 	<header id="masthead" class="site-header">
 		<nav id="site-navigation" class="main-navigation">
 			<div class="eco-wrapper">
-				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'ecologix' ); ?></button>
 				<?php
 					wp_nav_menu( array(
 						'theme_location' => 'menu-1',
@@ -66,7 +65,6 @@
 				<?php endif; ?>
 			</div><!-- .site-branding -->
 			<nav id="secondary-navigation" class="main-navigation secondary-navigation">
-				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'ecologix' ); ?></button>
 				<?php
 					wp_nav_menu( array(
 						'theme_location' => 'menu-2',
