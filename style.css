@@ -1084,10 +1084,15 @@ main-navigation:not(.secondary-navigation) ul {
 }
 footer#colophon {
 	background-color: #006bb7;
+	color: white;
+}
+.site-footer a {
+	color: white;
+	text-decoration: none;
 }
 .site-footer .site-info {
 	background-color: #494949;
-	padding: 2em 1em;
+	padding: 1.5em 1em;
 }
 .site-footer .eco-upper-footer {
 	padding: 3em 1em;
@@ -1103,4 +1108,25 @@ footer#colophon {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+}
+.site-footer .widget-title {
+	text-transform: uppercase;
+	margin-top: 0;
+}
+.eco-footer-widget .menu {
+	margin: 0;
+	padding: 0;
+}
+.eco-footer-widget .menu li {
+	text-decoration: none;
+	list-style: none;
+	margin-bottom: 1em;
+}
+.site-footer .site-info .eco-wrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.eco-social-footer a:not(:first-of-type) {
+	margin-left: 1em;
 }
