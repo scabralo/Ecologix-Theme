@@ -993,6 +993,12 @@ body.home .entry-header {
 body.page {
 	margin-bottom: 0;
 }
+body.home .page {
+	margin-bottom: 0;
+}
+.entry-content {
+	margin-top: 0;
+}
 .site-title, .site-description {
 	position: absolute;
 	left: -999999px;
@@ -1005,6 +1011,9 @@ body.page {
 .entry-title {
     max-width: 1400px;
     margin: 0 auto;
+}
+.site-header {
+	background: #ffffff;
 }
 .site-header .eco-wrapper {
 	display: flex;
@@ -1187,6 +1196,7 @@ footer#colophon {
 	flex-direction: row-reverse;
 	padding-right: 5em;
 }
+.bottom-section-container > div,
 .content-section-container > div {
 	max-width: 600px;
 	margin: 0 1em;
@@ -1203,15 +1213,19 @@ footer#colophon {
 	margin-top: 0;
 	margin-bottom: .25em;
 }
+.bottom-section-content h2,
 .content-section-content h2 {
 	margin: 0;
 	margin-bottom: .25em;
-	font-size: 3em;
+	font-size: 2.5em;
+	line-height: 1em;
 }
+.bottom-section-content a,
 .content-section-content a {
 	text-decoration: none;
 	color: #0196ff;
 }
+.bottom-section-content a.eco-button,
 .content-section-content a.eco-button {
 	color: white;
 	background: #0196ff;
@@ -1221,4 +1235,29 @@ footer#colophon {
 }
 .left-layout .content-section-container {
 	padding-left: 5em;
+}
+.bottom-section-wrapper {
+	background: white;
+	height: 900px;
+	display: flex;
+}
+.bottom-section-container {
+	width: 100%;
+	background-repeat: no-repeat;
+	background-position: center right;
+	display: flex;
+	align-items: center;
+}
+.bottom-section-content {
+	background: #f3f3f3;
+	padding: 4em;
+}
+.bottom-section-content a.eco-button {
+	margin-top: 1.5em;
+	display: inline-block;
+}
+.bottom-section-content p {
+	color: #9b9b9b;
+	font-size: 1.7em;
+	line-height: 1.2em;
 }
