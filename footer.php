@@ -27,17 +27,11 @@
 		</div>
 		<div class="site-info">
 			<div class="eco-wrapper">
-				<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'ecologix' ) ); ?>">
-					<?php
-					/* translators: %s: CMS name, i.e. WordPress. */
-					printf( esc_html__( 'Proudly powered by %s', 'ecologix' ), 'WordPress' );
-					?>
-				</a>
-				<span class="sep"> | </span>
-					<?php
-					/* translators: 1: Theme name, 2: Theme author. */
-					printf( esc_html__( 'Theme: %1$s by %2$s.', 'ecologix' ), 'ecologix', '<a href="http://www.sergiocabral.io">Sergio Cabral</a>' );
-					?>
+				<span>(515) 250-6677 • 1517 North Ankeny Boulevard, Suite E, Ankeny IA 50021. All Rights Reserved</span>
+				<div class="eco-social-footer">
+					<a href="#"><img src="/ecologix/wp-content/uploads/2019/08/fb-icon.png" alt="Facebook Logo"></a>
+					<a href="#"><img src="/ecologix/wp-content/uploads/2019/08/linkedin-icon.png" alt="LinkedIn Logo"></a>
+				</div>
 			</div>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
