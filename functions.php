@@ -205,7 +205,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
-//[mainhero]
+//[main-hero]
 function mainhero_func( $atts ){
 	$bgImage = get_cfc_field('homepage-main-hero', 'hero-background');
 	
@@ -234,3 +234,30 @@ function afterhero_func( $atts ){
 	return $html;
 }
 add_shortcode( 'after-hero', 'afterhero_func' );
+
+//[content-sections]
+function contentsections_func( $atts ){
+	$html = '';
+	foreach( get_cfc_meta( 'homepage-content-sections' ) as $key => $value ){
+		$bgImage = get_cfc_field( 'homepage-content-sections','content-section-image', false, $key );
+		$contentLayout = get_cfc_field( 'homepage-content-sections','content-section-layout', false, $key );
+		$eyebrow = get_cfc_field( 'homepage-content-sections','content-section-eyebrow', false, $key );;
+		$header = get_cfc_field( 'homepage-content-sections','content-section-header', false, $key );;
+		$content = get_cfc_field( 'homepage-content-sections','content-section-content', false, $key );;
+		$buttonText = get_cfc_field( 'homepage-content-sections','content-section-button-text', false, $key );;
+		$buttonLink = get_cfc_field( 'homepage-content-sections','content-section-button-link', false, $key );;
+		
+		$html .= "<div class='content-section-wrapper content-section ". $contentLayout ."'>";
+		$html .= 	"<div class='content-section-container eco-wrapper'>";
+		$html .=		"<img src='". $bgImage['url'] ."' >";
+		$html .=		"<div class='content-section-content'>";
+		$html .= 			"<h2>" . $header . "</h2>";
+		$html .= 			"<p>" . $content . "</p>";
+		$html .= 			"<a href='". $buttonLink ."'>" . $buttonText . "</a>";
+		$html .=		"</div>";
+		$html .=	"</div>";
+		$html .= "</div>";
+	}
+	return $html;
+}
+add_shortcode( 'content-sections', 'contentsections_func' );
