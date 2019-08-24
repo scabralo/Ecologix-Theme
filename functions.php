@@ -241,19 +241,22 @@ function contentsections_func( $atts ){
 	foreach( get_cfc_meta( 'homepage-content-sections' ) as $key => $value ){
 		$bgImage = get_cfc_field( 'homepage-content-sections','content-section-image', false, $key );
 		$contentLayout = get_cfc_field( 'homepage-content-sections','content-section-layout', false, $key );
-		$eyebrow = get_cfc_field( 'homepage-content-sections','content-section-eyebrow', false, $key );;
-		$header = get_cfc_field( 'homepage-content-sections','content-section-header', false, $key );;
-		$content = get_cfc_field( 'homepage-content-sections','content-section-content', false, $key );;
-		$buttonText = get_cfc_field( 'homepage-content-sections','content-section-button-text', false, $key );;
-		$buttonLink = get_cfc_field( 'homepage-content-sections','content-section-button-link', false, $key );;
+		$eyebrow = get_cfc_field( 'homepage-content-sections','content-section-eyebrow', false, $key );
+		$header = get_cfc_field( 'homepage-content-sections','content-section-header', false, $key );
+		$content = get_cfc_field( 'homepage-content-sections','content-section-content', false, $key );
+		$buttonText = get_cfc_field( 'homepage-content-sections','content-section-button-text', false, $key );
+		$buttonLink = get_cfc_field( 'homepage-content-sections','content-section-button-link', false, $key );
 		
 		$html .= "<div class='content-section-wrapper content-section ". $contentLayout ."'>";
 		$html .= 	"<div class='content-section-container eco-wrapper'>";
-		$html .=		"<img src='". $bgImage['url'] ."' >";
+		$html .=		"<div class='content-section-image'>";
+		$html .=			"<img src='". $bgImage['url'] ."' >";
+		$html .=		"</div>";
 		$html .=		"<div class='content-section-content'>";
+		$html .= 			"<h3>" . $eyebrow . "</h3>";
 		$html .= 			"<h2>" . $header . "</h2>";
-		$html .= 			"<p>" . $content . "</p>";
-		$html .= 			"<a href='". $buttonLink ."'>" . $buttonText . "</a>";
+		$html .= 			$content;
+		$html .= 			"<a class='eco-button' href='". $buttonLink ."'>" . $buttonText . "</a>";
 		$html .=		"</div>";
 		$html .=	"</div>";
 		$html .= "</div>";
@@ -261,3 +264,31 @@ function contentsections_func( $atts ){
 	return $html;
 }
 add_shortcode( 'content-sections', 'contentsections_func' );
+
+//[bottom-content-sections]
+function bottomcontentsections_func( $atts ){
+	$html = '';
+	foreach( get_cfc_meta( 'homepage-bottom-content-section' ) as $key => $value ){
+		$bgImage = get_cfc_field( 'homepage-bottom-content-section','bottom-section-image', false, $key );
+		$header = get_cfc_field( 'homepage-bottom-content-section','bottom-section-header', false, $key );
+		$content = get_cfc_field( 'homepage-bottom-content-section','bottom-section-content', false, $key );
+		$buttonText = get_cfc_field( 'homepage-bottom-content-section','bottom-section-button-text', false, $key );
+		$buttonLink = get_cfc_field( 'homepage-bottom-content-section','bottom-section-button-link', false, $key );
+		
+		$html .= "<div class='bottom-section-wrapper content-section'>";
+		$html .= 	"<div class='bottom-section-container eco-wrapper'>";
+		$html .=		"<div class='bottom-section-image'>";
+		$html .=			"<img src='". $bgImage['url'] ."' >";
+		$html .=		"</div>";
+		$html .=		"<div class='bottom-section-content'>";
+		$html .= 			"<h3>" . $eyebrow . "</h3>";
+		$html .= 			"<h2>" . $header . "</h2>";
+		$html .= 			$content;
+		$html .= 			"<a class='eco-button' href='". $buttonLink ."'>" . $buttonText . "</a>";
+		$html .=		"</div>";
+		$html .=	"</div>";
+		$html .= "</div>";
+	}
+	return $html;
+}
+add_shortcode( 'bottom-content-sections', 'bottomcontentsections_func' );
