@@ -205,3 +205,32 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+//[mainhero]
+function mainhero_func( $atts ){
+	$bgImage = get_cfc_field('homepage-main-hero', 'hero-background');
+	
+	$html = "<div class='main-hero-wrapper main-hero' style='background-image: url(". $bgImage['url'] .")'>";
+	$html .= 	"<div class='main-hero-container eco-wrapper'>";
+	$html .= 		"<div class='main-hero-content'>";
+	$html .= 			"<h2>" . get_cfc_field('homepage-main-hero', 'hero-header') . "</h2>";
+	$html .= 			"<p>" . get_cfc_field('homepage-main-hero', 'hero-content') . "</p>";
+	$html .= 		"</div>";
+	$html .= 	"</div>";
+	$html .= "</div>";
+	return $html;
+}
+add_shortcode( 'main-hero', 'mainhero_func' );
+
+//[after-hero]
+function afterhero_func( $atts ){
+	
+	$html = "<div class='after-hero-wrapper after-main-hero'>";
+	$html .= 	"<div class='after-hero-container eco-wrapper'>";
+	$html .= 		"<div class='main-hero-content'>";
+	$html .= 			get_cfc_field('after-hero-content', 'after-main-hero-content');
+	$html .= 		"</div>";
+	$html .= 	"</div>";
+	$html .= "</div>";
+	return $html;
+}
+add_shortcode( 'after-hero', 'afterhero_func' );

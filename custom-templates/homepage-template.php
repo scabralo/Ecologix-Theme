@@ -13,7 +13,7 @@ get_header();
 		<main id="main" class="site-main">
 			<article class="page type-page status-publish hentry">
 				<div class="entry-content">
-
+					<?php echo do_shortcode( '[main-hero]' ); ?>
 				</div>
 			</article>
 		</main><!-- #main -->
