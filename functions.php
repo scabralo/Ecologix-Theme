@@ -226,7 +226,7 @@ function afterhero_func( $atts ){
 	
 	$html = "<div class='after-hero-wrapper after-main-hero'>";
 	$html .= 	"<div class='after-hero-container eco-wrapper'>";
-	$html .= 		"<div class='main-hero-content'>";
+	$html .= 		"<div class='after-hero-content'>";
 	$html .= 			get_cfc_field('after-hero-content', 'after-main-hero-content');
 	$html .= 		"</div>";
 	$html .= 	"</div>";
