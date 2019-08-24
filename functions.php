@@ -276,12 +276,8 @@ function bottomcontentsections_func( $atts ){
 		$buttonLink = get_cfc_field( 'homepage-bottom-content-section','bottom-section-button-link', false, $key );
 		
 		$html .= "<div class='bottom-section-wrapper content-section'>";
-		$html .= 	"<div class='bottom-section-container eco-wrapper'>";
-		$html .=		"<div class='bottom-section-image'>";
-		$html .=			"<img src='". $bgImage['url'] ."' >";
-		$html .=		"</div>";
+		$html .= 	"<div class='bottom-section-container eco-wrapper' style='background-image: url(". $bgImage['url'] .")'>";
 		$html .=		"<div class='bottom-section-content'>";
-		$html .= 			"<h3>" . $eyebrow . "</h3>";
 		$html .= 			"<h2>" . $header . "</h2>";
 		$html .= 			$content;
 		$html .= 			"<a class='eco-button' href='". $buttonLink ."'>" . $buttonText . "</a>";
