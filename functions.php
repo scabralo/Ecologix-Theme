@@ -44,8 +44,11 @@ if ( ! function_exists( 'ecologix_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', 'ecologix' ),
-			'menu-2' => esc_html__( 'Secondary', 'ecologix' ),
+			'menu-1' => esc_html__( 'Main Navigation', 'ecologix' ),
+			'menu-2' => esc_html__( 'For Your Home', 'ecologix' ),
+			'menu-3' => esc_html__( 'For Your Business', 'ecologix' ),
+			'menu-4' => esc_html__( 'Our Company', 'ecologix' ),
+			'menu-5' => esc_html__( 'Philanthropy', 'ecologix' ),
 		) );
 
 		/*
