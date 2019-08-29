@@ -16,7 +16,7 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
-	<link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
 
 	<?php wp_head(); ?>
 </head>
@@ -67,10 +67,13 @@
 			</div><!-- .site-branding -->
 			<nav id="secondary-navigation" class="main-navigation secondary-navigation">
 				<?php
-					wp_nav_menu( array(
-						'theme_location' => 'menu-2',
-						'menu_id'        => 'secondary-menu',
-					) );
+					$menuId = get_cfc_field('second-menu-selector-group', 'second-menu-selector');
+					if($menuId != 'none') {
+						wp_nav_menu( array(
+							'theme_location' => $menuId,
+							'menu_id'        => 'secondary-menu',
+						) );
+					}
 				?>
 			</nav><!-- #site-navigation -->
 		</div>

@@ -211,15 +211,17 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 //[main-hero]
 function mainhero_func( $atts ){
 	$bgImage = get_cfc_field('homepage-main-hero', 'hero-background');
-	
-	$html = "<div class='main-hero-wrapper main-hero' style='background-image: url(". $bgImage['url'] .")'>";
-	$html .= 	"<div class='main-hero-container eco-wrapper'>";
-	$html .= 		"<div class='main-hero-content'>";
-	$html .= 			"<h2>" . get_cfc_field('homepage-main-hero', 'hero-header') . "</h2>";
-	$html .= 			"<p>" . get_cfc_field('homepage-main-hero', 'hero-content') . "</p>";
-	$html .= 		"</div>";
-	$html .= 	"</div>";
-	$html .= "</div>";
+	$html = '';
+	if($bgImage) {
+		$html .= "<div class='main-hero-wrapper main-hero' style='background-image: url(". $bgImage['url'] .")'>";
+		$html .= 	"<div class='main-hero-container eco-wrapper'>";
+		$html .= 		"<div class='main-hero-content'>";
+		$html .= 			"<h2>" . get_cfc_field('homepage-main-hero', 'hero-header') . "</h2>";
+		$html .= 			"<p>" . get_cfc_field('homepage-main-hero', 'hero-content') . "</p>";
+		$html .= 		"</div>";
+		$html .= 	"</div>";
+		$html .= "</div>";
+	}
 	return $html;
 }
 add_shortcode( 'main-hero', 'mainhero_func' );

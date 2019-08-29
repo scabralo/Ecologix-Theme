@@ -54,7 +54,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 
-html {
+ html {
 	line-height: 1.15; /* 1 */
 	-webkit-text-size-adjust: 100%; /* 2 */
 }
@@ -701,6 +701,9 @@ a:hover, a:active {
 	.main-navigation ul {
 		display: block;
 	}
+	.main-navigation div > ul {
+		display: flex;
+	}
 }
 
 .site-main .comment-navigation, .site-main
@@ -723,6 +726,10 @@ a:hover, a:active {
 	float: right;
 	text-align: right;
 	width: 50%;
+}
+.main-navigation ul ul li:hover > ul {
+	right: 100%;
+	left: unset;
 }
 
 /*--------------------------------------------------------------
@@ -1007,11 +1014,14 @@ body.home .page {
 	background-color: #006bb7;
 }
 .panel-grid.panel-no-style,
-.eco-wrapper,
-.entry-title {
+.eco-wrapper {
     max-width: 1400px;
     margin: 0 auto;
 }
+.entry-title {
+	display: none;
+}
+.main-navigation ul ul,
 .site-header {
 	background: #ffffff;
 }
@@ -1029,7 +1039,7 @@ main-navigation:not(.secondary-navigation) ul {
 	min-height: 6em;
 	width: 14em;
 	display: flex;
-	align-items: stretch;
+	align-items: center;
 	justify-content: center;
 }
 .main-navigation:not(.secondary-navigation) li:hover,
@@ -1061,14 +1071,14 @@ main-navigation:not(.secondary-navigation) ul {
 	justify-content: center;
 }
 .secondary-navigation li {
-	padding-left: 2.5em;
+	padding-left: 1.8em;
 }
 .secondary-navigation a {
 	color: #9b9b9b;
 	text-transform: uppercase;
 }
 .secondary-navigation > div,
-.secondary-navigation ul {
+.secondary-navigation > ul {
 	width: 100%;
 	display: flex;
 	justify-content: flex-start;
@@ -1238,6 +1248,40 @@ footer#colophon {
 	padding: 1em;
 	text-transform: uppercase;
 	font-weight: 600;
+	padding-left: 2em;
+}
+.sp_wpspwpost_static.wpspw-design-1 .wpspw-readmorebtn:hover {
+	color: white !important;
+	background: #0196ff;
+}
+.sp_wpspwpost_static.wpspw-design-1 .wpspw-readmorebtn:hover::after,
+.bottom-section-content a.eco-button:hover::after,
+.content-section-content a.eco-button:hover::after {
+	background-image: url('/ecologix/wp-content/themes/ecologix/assets/arrow-white.svg');
+}
+.sp_wpspwpost_static.wpspw-design-1 .wpspw-readmorebtn::after,
+.bottom-section-content a:not(.eco-button)::after,
+.content-section-content a:not(.eco-button)::after,
+.bottom-section-content a.eco-button::after,
+.content-section-content a.eco-button::after {
+	content: "";
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	display: inline-block;
+	height: 14px;
+	margin: 0 0 0 5px;
+	opacity: 1;
+	-webkit-transition: all .2s ease;
+	transition: all .2s ease;
+	width: 14px;
+	margin: 0 0 0 .5em;
+	-webkit-transition: all 333ms ease!important;
+	transition: all 333ms ease!important;
+}
+.bottom-section-content a:not(.eco-button):hover::after,
+.content-section-content a:not(.eco-button):hover::after {
+	background-image: url('/ecologix/wp-content/themes/ecologix/assets/arrow-brand.svg');
 }
 .left-layout .content-section-container {
 	padding-left: 5em;
@@ -1267,11 +1311,73 @@ footer#colophon {
 	font-size: 1.7em;
 	line-height: 1.2em;
 }
+#secondary-menu > li {
+	/* max-width: 180px; */
+}
+.sp_wpspwpost_static.wpspw-design-1.wpspw-grid-1.wpspw-clearfix {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	max-width: 1400px;
+	margin: 0 auto;
+	padding-top: 2em;
+}
+.sp_wpspwpost_static.wpspw-design-1.wpspw-grid-1.wpspw-clearfix > div {
+	width: 33.33%;
+}
+.sp_wpspwpost_static.wpspw-design-1 .wpspw-readmorebtn {
+	color: white !important;
+	background: #0196ff;
+	padding: 1em 2em;
+	text-transform: uppercase;
+	font-weight: 600;
+	border: none;
+	margin-top: 1em !important;
+	padding-left: 3.5em;
+}
+.wpspw-post-content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.type-post .entry-title {
+	display: block;
+	margin-bottom: 0;
+}
+.archive.author .page-title {
+	margin-top: .5em;
+}
+nav.navigation.post-navigation,
+.archive.author .page-title,
+article.type-post {
+	max-width: 1000px;
+	margin: 0 auto;
+}
+.type-post .entry-meta {
+	margin-bottom: 1.5em;
+}
+nav.navigation.post-navigation {
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+.wpspw-post-categories,
+.type-post .cat-links {
+	display: none;
+}
 
 /* Responsiveness */
 
 .menu-main-menu-container {
-	min-width: 673px;
+	min-width: 896px;
+}
+@media screen and (max-width: 1160px) {
+	.main-navigation { display: none; }
+	.site-header .eco-wrapper {
+    justify-content: center;
+	}
+	.site-branding img {
+    width: 90%;
+	}
 }
 @media screen and (max-width: 1010px) {
 	.site-footer .eco-widgets-wrapper > div {
@@ -1281,15 +1387,11 @@ footer#colophon {
 	.right-layout .content-section-container {
     padding: .5em;
 	}
+	.sp_wpspwpost_static.wpspw-design-1.wpspw-grid-1.wpspw-clearfix > div {
+    width: 50%;
+	}
 }
 @media screen and (max-width: 945px) {
-	.main-navigation { display: none; }
-	.site-header .eco-wrapper {
-    justify-content: center;
-	}
-	.site-branding img {
-    width: 90%;
-	}
 	.site-footer .site-info .eco-wrapper {
     flex-direction: column;
 	}
@@ -1323,6 +1425,9 @@ footer#colophon {
 	}
 	.main-hero-content {
     min-width: unset;
+    width: 100%;
+	}
+	.sp_wpspwpost_static.wpspw-design-1.wpspw-grid-1.wpspw-clearfix > div {
     width: 100%;
 	}
 }
