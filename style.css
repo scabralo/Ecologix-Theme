@@ -1,8 +1,8 @@
 /*!
 Theme Name: Ecologix
-Theme URI: http://underscores.me/
-Author: Sergio Cabral
-Author URI: http://www.sergiocabral.io
+Theme URI: https://orpical.com
+Author: Sergio Cabral, Orpical Group
+Author URI: https://orpical.com
 Description: A WordPress theme custom made for Ecologix Global
 Version: 1.0.0
 License: GNU General Public License v2 or later
@@ -1013,6 +1013,7 @@ body.home .page {
 .main-navigation:not(.secondary-navigation) {
 	background-color: #006bb7;
 }
+.panel-has-style .panel-row-style .panel-grid-cell,
 .panel-grid.panel-no-style,
 .eco-wrapper {
     max-width: 1400px;
@@ -1043,13 +1044,18 @@ main-navigation:not(.secondary-navigation) ul {
 	justify-content: center;
 }
 .main-navigation:not(.secondary-navigation) li:hover,
-.main-navigation:not(.secondary-navigation) li.current-menu-item {
+.main-navigation:not(.secondary-navigation) li.current-menu-item,
+.main-navigation:not(.secondary-navigation) li.current-page-ancestor {
 	background-color: #0196ff;
 }
-.main-navigation:not(.secondary-navigation) li.current-menu-item {
+.main-navigation:not(.secondary-navigation) li.current-menu-item,
+.main-navigation:not(.secondary-navigation) li.current-page-ancestor {
 	background-image: url('/ecologix/wp-content/uploads/2019/08/triangle-white.png');
 	background-position: bottom center;
 	background-repeat: no-repeat;
+}
+.secondary-navigation li.current-menu-item a {
+    color: #0196ff;
 }
 .main-navigation:not(.secondary-navigation) a {
 	color: white;
